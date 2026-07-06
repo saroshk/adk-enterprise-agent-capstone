@@ -150,7 +150,7 @@ marked *auto-approved pending human confirmation* — but still never posted by 
 **Scenario 7 — Bilingual.** The same question asked in Arabic routes identically and is answered
 **in Arabic**. The data layer stays single-language; the model handles translation at the
 conversation layer — which is how a real bilingual enterprise interface behaves, and avoids
-maintaining two copies of the data.
+maintaining two copies of the data. The design is also language-extensible: pointing the servers at a `seed-data-<language>/` folder serves that language's data, so adding a new language is a matter of adding a seed-data folder, not changing code.
 
 ## Human-in-the-loop: two paths
 
@@ -192,5 +192,5 @@ that is genuinely useful for day-to-day finance work while remaining safe to dep
 
 ---
 
-**Code:** [YOUR GITHUB REPO URL] — includes full setup instructions in the README.
+**Code:** https://github.com/saroshk/adk-enterprise-agent-capstone — includes full setup instructions in the README.
 **Video:** [YOUR YOUTUBE LINK]

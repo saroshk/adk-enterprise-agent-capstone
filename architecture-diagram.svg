@@ -41,7 +41,7 @@
 
   <!-- User -->
   <rect x="430" y="110" width="200" height="56" rx="10" fill="#eef3f8" stroke="#3d5a73" stroke-width="2" filter="url(#shadow)"/>
-  <text x="530" y="134" text-anchor="middle" class="lbl">User (AR / EN)</text>
+  <text x="530" y="134" text-anchor="middle" class="lbl">User (Arabic / English)</text>
   <text x="530" y="153" text-anchor="middle" class="sub">one UI &#183; free-format language</text>
 
   <!-- Coordinator -->

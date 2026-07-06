@@ -32,11 +32,21 @@ enterprise_agent/
   SKILL.md              # Skill definition
   scripts/check_invoice.py   # deterministic policy-check (entrypoint: check_compliance)
 seed-data/              # stub data — erp/ and sharepoint/  (see DATA_MAP.md)
-seed-data-ar/           # optional Arabic seed data (KSA vendors, SAR, Arabic docs)
+seed-data-arabic/           # optional Arabic seed data (KSA vendors, SAR, Arabic docs)
 demo-screenshots/       # captured evidence for each scenario
 ```
 The servers expect `seed-data/` as a sibling of `enterprise_agent/`. Override with the
-`ERP_DATA_DIR` / `SP_DATA_DIR` environment variables to point at `seed-data-ar/` for the Arabic demo.
+`ERP_DATA_DIR` / `SP_DATA_DIR` environment variables to point at `seed-data-arabic/` for the Arabic demo.
+> **Language-extensible:** the bilingual design generalizes. Point the servers at a `seed-data-<language>/` folder (e.g. `seed-data-arabic/`) to serve that language's data; the model answers in whatever language the user asks. Adding a new language is just adding a new seed-data folder — no code changes.
+
+A `seed-data-<language>/` folder mirrors `seed-data/` exactly:
+```
+seed-data-<language>/
+  erp/         vendors.json, vendor_invoices.json, purchase_orders.json
+  sharepoint/  procurement-policy.md, return-policy.md, vendor-faq.md
+```
+Translate only the prose (vendor display names, policy/FAQ text). Keep every key and identifier unchanged — account numbers, invoice/PO numbers, policy IDs, amounts, and payment terms — so retrieval and the compliance logic keep working. See `seed-data-arabic/` as the reference implementation.
+
 
 ## Quick start
 ```bash
