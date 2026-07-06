@@ -47,6 +47,8 @@ seed-data-<language>/
 ```
 Translate only the prose (vendor display names, policy/FAQ text). Keep every key and identifier unchanged — account numbers, invoice/PO numbers, policy IDs, amounts, and payment terms — so retrieval and the compliance logic keep working. See `seed-data-arabic/` as the reference implementation.
 
+> **Capability-extensible:** the same modular pattern adds new *functionality*. To support a new data source or task, stand up another read-only MCP server, wrap it in a new specialist agent, and register it in the coordinator's tool list with a clear description — the coordinator routes to it automatically, with no changes to the existing agents. (Same AgentTool pattern used for `erp_agent` and `docs_agent`.) Example: a CRM agent over a CRM MCP server, or an HR-policy agent over a second document store.
+
 
 ## Quick start
 ```bash

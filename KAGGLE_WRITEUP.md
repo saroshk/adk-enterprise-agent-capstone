@@ -114,6 +114,11 @@ reusable, **unit-tested** unit, invoked through the `check_invoice_compliance` t
 ad-hoc prompt reasoning. It returns a structured verdict: status, rule broken, cited policy, and
 recommended action.
 
+
+### Two security layers
+
+It is worth distinguishing two kinds of security, because they live in different places. **(1) Agent guardrails** — the read-only tool surface, prompt-injection resistance, action refusal with human-in-the-loop triage, and grounded/cited answers — are implemented in this project and govern *what the agent can do*. **(2) Data entitlement** — *which data a given user may see* — is a platform responsibility, not the agent's: in production the end user's identity is passed through to D365 and SharePoint, and their OData and MS Graph APIs enforce row- and role-level access natively, so the agent inherits authorization from the systems of record rather than re-implementing it. The demo uses stub data without live auth; the entitlement layer is the documented production path.
+
 ## Walkthrough: what the agent actually does
 
 Each scenario below is demonstrated in the video and traceable in the ADK event view. The seed
@@ -177,9 +182,12 @@ Three extensions would move this from prototype toward production. First, **pass
 identity through to the MCP servers** so the agent inherits Dynamics 365 and SharePoint's per-user
 authorization, giving row- and role-level data scoping for free. Second, **expand the compliance
 Skill** to cover the full policy — duplicate detection, currency rules, and terms-approval checks —
-as additional deterministic checks alongside the PO rule. Third, **deepen bilingual support** with
+as additional deterministic checks alongside the PO rule. The architecture is also capability-extensible along a second axis: because the coordinator routes by tool description, a new function is added by standing up another read-only MCP server, wrapping it in a specialist agent, and registering it in the coordinator's tool list — no change to existing agents. A CRM agent or an HR-policy agent would drop in the same way `erp_agent` and `docs_agent` did. Third, **deepen bilingual support** with
 an explicit evaluation set of Arabic queries to measure answer fidelity, and optionally localize
 retrieved document text for Arabic-first users.
+
+
+**Predictive analytics agent (future extension).** D365's historical transactional data is a labeled time series suitable for supervised learning — forecasting vendor spend, cash flow, or late-payment risk. In production, real-time queries use D365's OData JSON API (as modeled here), while model training would draw on bulk historical data exported via Synapse Link to columnar Parquet files. A trained model would be served through its own read-only MCP server and a forecasting specialist agent; the coordinator would route forward-looking questions — for example "what's our likely spend next month?", "what's the projected cash outflow next quarter?", or "which open invoices are at risk of late payment?" — to it, complementing the retrieval agents that answer "what happened." This predictive axis applies to the dynamic transactional (ERP) data, not the stable policy documents.
 
 ## Rationale, briefly
 

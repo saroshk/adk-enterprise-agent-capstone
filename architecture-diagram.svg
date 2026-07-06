@@ -90,11 +90,11 @@
   <!-- data layer -->
   <rect x="70" y="536" width="250" height="70" rx="10" fill="#f0f0f0" stroke="#5b6b7a" stroke-width="2" filter="url(#shadow)"/>
   <text x="195" y="564" text-anchor="middle" class="lbl">SharePoint MCP server</text>
-  <text x="195" y="584" text-anchor="middle" class="sub">read-only &#183; policy + FAQ docs</text>
+  <text x="195" y="584" text-anchor="middle" class="sub">read-only &#183; MS Graph API</text>
 
   <rect x="405" y="536" width="250" height="70" rx="10" fill="#f0f0f0" stroke="#5b6b7a" stroke-width="2" filter="url(#shadow)"/>
   <text x="530" y="564" text-anchor="middle" class="lbl">ERP MCP server</text>
-  <text x="530" y="584" text-anchor="middle" class="sub">read-only &#183; D365 F&amp;O-shaped data</text>
+  <text x="530" y="584" text-anchor="middle" class="sub">read-only &#183; D365 OData API</text>
 
   <rect x="740" y="536" width="250" height="70" rx="10" fill="#faf4e6" stroke="#b8860b" stroke-width="2" filter="url(#shadow)"/>
   <text x="865" y="564" text-anchor="middle" class="lbl">check_invoice.py</text>
