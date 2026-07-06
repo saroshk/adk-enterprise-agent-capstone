@@ -36,8 +36,8 @@
   <text x="46" y="118" class="band">INTERACTION</text>
   <rect x="30" y="196" width="1000" height="290" rx="12" fill="#eef6ef"/>
   <text x="46" y="214" class="band">ORCHESTRATION</text>
-  <rect x="30" y="506" width="1000" height="120" rx="12" fill="#f5f3ef"/>
-  <text x="46" y="524" class="band">DATA &amp; RULES</text>
+  <rect x="30" y="512" width="1000" height="120" rx="12" fill="#f5f3ef"/>
+  <text x="46" y="530" class="band">DATA &amp; RULES</text>
 
   <!-- User -->
   <rect x="430" y="110" width="200" height="56" rx="10" fill="#eef3f8" stroke="#3d5a73" stroke-width="2" filter="url(#shadow)"/>
@@ -88,32 +88,32 @@
   <text x="682" y="380" text-anchor="middle" class="flowu">verdict</text>
 
   <!-- data layer -->
-  <rect x="70" y="536" width="250" height="70" rx="10" fill="#f0f0f0" stroke="#5b6b7a" stroke-width="2" filter="url(#shadow)"/>
-  <text x="195" y="564" text-anchor="middle" class="lbl">SharePoint MCP server</text>
-  <text x="195" y="584" text-anchor="middle" class="sub">read-only &#183; MS Graph API</text>
+  <rect x="70" y="548" width="250" height="70" rx="10" fill="#f0f0f0" stroke="#5b6b7a" stroke-width="2" filter="url(#shadow)"/>
+  <text x="195" y="576" text-anchor="middle" class="lbl">SharePoint MCP server</text>
+  <text x="195" y="596" text-anchor="middle" class="sub">read-only &#183; MS Graph API</text>
 
-  <rect x="405" y="536" width="250" height="70" rx="10" fill="#f0f0f0" stroke="#5b6b7a" stroke-width="2" filter="url(#shadow)"/>
-  <text x="530" y="564" text-anchor="middle" class="lbl">ERP MCP server</text>
-  <text x="530" y="584" text-anchor="middle" class="sub">read-only &#183; D365 OData API</text>
+  <rect x="405" y="548" width="250" height="70" rx="10" fill="#f0f0f0" stroke="#5b6b7a" stroke-width="2" filter="url(#shadow)"/>
+  <text x="530" y="576" text-anchor="middle" class="lbl">ERP MCP server</text>
+  <text x="530" y="596" text-anchor="middle" class="sub">read-only &#183; D365 OData API</text>
 
-  <rect x="740" y="536" width="250" height="70" rx="10" fill="#faf4e6" stroke="#b8860b" stroke-width="2" filter="url(#shadow)"/>
-  <text x="865" y="564" text-anchor="middle" class="lbl">check_invoice.py</text>
-  <text x="865" y="584" text-anchor="middle" class="sub">unit-tested rule logic</text>
+  <rect x="740" y="548" width="250" height="70" rx="10" fill="#faf4e6" stroke="#b8860b" stroke-width="2" filter="url(#shadow)"/>
+  <text x="865" y="576" text-anchor="middle" class="lbl">check_invoice.py</text>
+  <text x="865" y="596" text-anchor="middle" class="sub">unit-tested rule logic</text>
 
-  <line x1="175" y1="482" x2="175" y2="536" class="down" marker-end="url(#down)"/>
-  <text x="168" y="512" text-anchor="end" class="flowd">query</text>
-  <line x1="215" y1="536" x2="215" y2="482" class="up" marker-end="url(#up)"/>
-  <text x="222" y="512" text-anchor="start" class="flowu">records</text>
+  <line x1="175" y1="482" x2="175" y2="548" class="down" marker-end="url(#down)"/>
+  <text x="168" y="526" text-anchor="end" class="flowd">query</text>
+  <line x1="215" y1="548" x2="215" y2="482" class="up" marker-end="url(#up)"/>
+  <text x="222" y="526" text-anchor="start" class="flowu">records</text>
 
-  <line x1="510" y1="482" x2="510" y2="536" class="down" marker-end="url(#down)"/>
-  <text x="503" y="512" text-anchor="end" class="flowd">query</text>
-  <line x1="550" y1="536" x2="550" y2="482" class="up" marker-end="url(#up)"/>
-  <text x="557" y="512" text-anchor="start" class="flowu">records</text>
+  <line x1="510" y1="482" x2="510" y2="548" class="down" marker-end="url(#down)"/>
+  <text x="503" y="526" text-anchor="end" class="flowd">query</text>
+  <line x1="550" y1="548" x2="550" y2="482" class="up" marker-end="url(#up)"/>
+  <text x="557" y="526" text-anchor="start" class="flowu">records</text>
 
-  <line x1="845" y1="482" x2="845" y2="536" class="down" marker-end="url(#down)"/>
-  <text x="838" y="512" text-anchor="end" class="flowd">call</text>
-  <line x1="885" y1="536" x2="885" y2="482" class="up" marker-end="url(#up)"/>
-  <text x="892" y="512" text-anchor="start" class="flowu">verdict</text>
+  <line x1="845" y1="482" x2="845" y2="548" class="down" marker-end="url(#down)"/>
+  <text x="838" y="526" text-anchor="end" class="flowd">call</text>
+  <line x1="885" y1="548" x2="885" y2="482" class="up" marker-end="url(#up)"/>
+  <text x="892" y="526" text-anchor="start" class="flowu">verdict</text>
 
   <!-- concepts key -->
   <text x="84" y="662" class="cap" font-weight="700">Course concepts demonstrated:</text>
