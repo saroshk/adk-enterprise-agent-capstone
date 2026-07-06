@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/saroshk-adk-enterprise-agent-capstone-badge.png)](https://mseep.ai/app/saroshk-adk-enterprise-agent-capstone)
+
 # ADK Enterprise Agent — ERP, Policy Docs & Compliance Skill
 
 **A bilingual multi-agent assistant over Dynamics 365 Finance & Operations and SharePoint — answering finance and policy questions, checking invoices against procurement policy, and keeping a human in the loop.**
