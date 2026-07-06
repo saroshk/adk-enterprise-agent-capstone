@@ -71,5 +71,14 @@ def get_purchase_order(po_number: str) -> Optional[dict]:
     return None
 
 
+@mcp.tool()
+def get_invoice(invoice_number: str) -> Optional[dict]:
+    """Return a single invoice by its invoice number, or null if not found."""
+    q = invoice_number.strip().lower()
+    for r in _load("vendor_invoices.json"):
+        if r["InvoiceNumber"].lower() == q:
+            return r
+    return None
+
 if __name__ == "__main__":
     mcp.run()

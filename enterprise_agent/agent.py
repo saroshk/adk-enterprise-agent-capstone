@@ -154,7 +154,9 @@ erp_agent = LlmAgent(
     "literal 'None' if the invoice has no PO), and payment terms (e.g. Net30). These four fields "
     "are required by the downstream compliance check, so always surface them for every invoice "
     "even if the user did not ask for them. If a tool result is missing the PO number or payment "
-    "terms for an invoice, say so explicitly for that invoice rather than omitting the field.",
+    "terms for an invoice, say so explicitly for that invoice rather than omitting the field."
+    "\n\nWhen asked about a specific invoice by its number (e.g. INV-1000), use get_invoice "
+    "to fetch it directly -- do NOT ask the user for the vendor name.",
     tools=[erp_toolset],
 )
 
