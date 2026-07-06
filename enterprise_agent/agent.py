@@ -148,7 +148,13 @@ erp_agent = LlmAgent(
     description="Answers questions about vendors, invoices and purchase orders from D365 F&O.",
     instruction=GUARDRAIL + "\n\nYou specialise in ERP data. Use the D365 tools to look up "
     "vendors, invoices (filter by status when asked, e.g. Open vs Paid) and purchase orders. "
-    "Sum amounts only from the records the tools return.",
+    "Sum amounts only from the records the tools return."
+    "\n\nWhenever you return one or more invoices, list them explicitly and include for EACH "
+    "invoice ALL of these fields: invoice number, amount (USD), purchase order number (use the "
+    "literal 'None' if the invoice has no PO), and payment terms (e.g. Net30). These four fields "
+    "are required by the downstream compliance check, so always surface them for every invoice "
+    "even if the user did not ask for them. If a tool result is missing the PO number or payment "
+    "terms for an invoice, say so explicitly for that invoice rather than omitting the field.",
     tools=[erp_toolset],
 )
 
@@ -173,18 +179,29 @@ root_agent = LlmAgent(
     "the invoices, then compare them yourself and report each invoice as pass or violation "
     "with its number and the specific rule. Never answer a combined question from only one "
     "source; if you are missing the invoices or the rules, call the other tool before answering."
-    "\n\nFor any question about whether a specific invoice complies with policy, PREFER the "
-    "check_invoice_compliance tool over comparing the rules yourself -- call it with the invoice "
-    "number and report its verdict, using docs_agent/erp_agent only to add context or if the "
-    "Skill returns an error."
+    "\n\nINVOICE COMPLIANCE (preferred path): The check_invoice_compliance tool is the preferred "
+    "way to decide whether an invoice complies with policy. IMPORTANT -- its inputs are "
+    "amount, po_number, and payment_terms; it does NOT accept an invoice number. So the workflow "
+    "is ALWAYS: (1) call erp_agent to fetch the invoice(s), each with its amount, PO number "
+    "(or 'None'), and payment terms; (2) for EACH invoice, call check_invoice_compliance with "
+    "those three values; (3) report the verdict per invoice, citing the invoice number and the "
+    "rule from the Skill's result. NEVER ask the user to supply the amount, PO number, or payment "
+    "terms -- you obtain them from erp_agent yourself. Fall back to comparing the rules manually "
+    "with docs_agent only if the Skill returns an error."
+    "\n\nWHOLE-VENDOR COMPLIANCE: When the question is about a whole vendor (e.g. 'do Contoso "
+    "Supplies' invoices follow the procurement policy?'), first call erp_agent to fetch ALL of "
+    "that vendor's invoices (with amount, PO number, and payment terms for each), then run "
+    "check_invoice_compliance once PER invoice, and finish with a per-invoice summary plus an "
+    "overall verdict for the vendor. Do not stop after only fetching the invoices."
     "\n\nAPPROVAL TRIAGE (human-in-the-loop): When asked to approve or pay an invoice, do NOT "
     "execute it -- you are read-only. Instead triage it like an approval queue: (1) look up the "
-    "invoice via erp_agent and the relevant rules via docs_agent; (2) if the invoice COMPLIES "
-    "with policy, respond that it would be AUTO-APPROVED, but note a human must confirm because "
-    "this assistant cannot post the approval itself; (3) if the invoice VIOLATES policy (e.g. an "
-    "amount of USD 10,000 or more with no purchase order), do NOT approve it -- FLAG IT FOR HUMAN "
-    "REVIEW and give a HUMAN REVIEW SUMMARY: invoice number, amount, the rule it breaks (cite the "
-    "policy document ID), and the decision required (approve as exception, or reject). Never post "
-    "or execute an approval yourself; only recommend or escalate for a human decision.",
+    "invoice via erp_agent (amount, PO, terms) and the relevant rules via docs_agent; (2) run "
+    "check_invoice_compliance on it; (3) if it COMPLIES, respond that it would be AUTO-APPROVED, "
+    "but note a human must confirm because this assistant cannot post the approval itself; (4) if "
+    "it VIOLATES policy (e.g. an amount of USD 10,000 or more with no purchase order), do NOT "
+    "approve it -- FLAG IT FOR HUMAN REVIEW and give a HUMAN REVIEW SUMMARY: invoice number, "
+    "amount, the rule it breaks (cite the policy document ID), and the decision required (approve "
+    "as exception, or reject). Never post or execute an approval yourself; only recommend or "
+    "escalate for a human decision.",
     tools=[AgentTool(agent=docs_agent), AgentTool(agent=erp_agent), check_invoice_compliance],
 )
