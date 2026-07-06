@@ -1,0 +1,34 @@
+{
+  "value": [
+    {
+      "dataAreaId": "usmf",
+      "VendorAccountNumber": "US-001",
+      "VendorName": "سابك (SABIC)",
+      "VendorName_en": "Contoso Supplies",
+      "VendorGroupId": "10",
+      "PaymentTerms": "Net45",
+      "CurrencyCode": "SAR",
+      "VendorHoldStatus": "No"
+    },
+    {
+      "dataAreaId": "usmf",
+      "VendorAccountNumber": "US-002",
+      "VendorName": "أرامكو السعودية (Saudi Aramco)",
+      "VendorName_en": "Fabrikam Logistics",
+      "VendorGroupId": "10",
+      "PaymentTerms": "Net30",
+      "CurrencyCode": "SAR",
+      "VendorHoldStatus": "No"
+    },
+    {
+      "dataAreaId": "usmf",
+      "VendorAccountNumber": "US-003",
+      "VendorName": "معادن (Ma'aden)",
+      "VendorName_en": "Northwind Traders",
+      "VendorGroupId": "20",
+      "PaymentTerms": "Net15",
+      "CurrencyCode": "SAR",
+      "VendorHoldStatus": "No"
+    }
+  ]
+}

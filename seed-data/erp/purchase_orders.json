@@ -1,0 +1,10 @@
+{
+  "value": [
+    { "dataAreaId": "usmf", "PurchaseOrderNumber": "PO-5000", "OrderVendorAccountNumber": "US-001", "PurchaseOrderStatus": "Invoiced", "OrderTotalAmount": 3100.00, "CurrencyCode": "USD" },
+    { "dataAreaId": "usmf", "PurchaseOrderNumber": "PO-5001", "OrderVendorAccountNumber": "US-001", "PurchaseOrderStatus": "Received", "OrderTotalAmount": 4200.00, "CurrencyCode": "USD" },
+    { "dataAreaId": "usmf", "PurchaseOrderNumber": "PO-5002", "OrderVendorAccountNumber": "US-001", "PurchaseOrderStatus": "Received", "OrderTotalAmount": 8750.00, "CurrencyCode": "USD" },
+    { "dataAreaId": "usmf", "PurchaseOrderNumber": "PO-6001", "OrderVendorAccountNumber": "US-002", "PurchaseOrderStatus": "Received", "OrderTotalAmount": 6000.00, "CurrencyCode": "USD" },
+    { "dataAreaId": "usmf", "PurchaseOrderNumber": "PO-6002", "OrderVendorAccountNumber": "US-002", "PurchaseOrderStatus": "Confirmed", "OrderTotalAmount": 15000.00, "CurrencyCode": "USD" },
+    { "dataAreaId": "usmf", "PurchaseOrderNumber": "PO-7001", "OrderVendorAccountNumber": "US-003", "PurchaseOrderStatus": "Invoiced", "OrderTotalAmount": 2300.00, "CurrencyCode": "USD" }
+  ]
+}

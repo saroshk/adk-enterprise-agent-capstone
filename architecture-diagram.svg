@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 820" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="down" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#5b6b7a"/>
+    </marker>
+    <marker id="up" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#2e7d32"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1a2733" flood-opacity="0.18"/>
+    </filter>
+    <style>
+      .lbl{font-size:15px;font-weight:600;fill:#1a2733;}
+      .sub{font-size:11px;font-weight:600;fill:#42505c;}
+      .down{stroke:#5b6b7a;stroke-width:2;fill:none;}
+      .up{stroke:#2e7d32;stroke-width:2;fill:none;stroke-dasharray:5,3;}
+      .title{font-size:23px;font-weight:700;fill:#12212e;}
+      .cap{font-size:13px;fill:#5b6b7a;}
+      .tag{font-size:11px;font-weight:700;fill:#fff;}
+      .flowd{font-size:11px;font-weight:800;fill:#3a4650;}
+      .flowu{font-size:11px;font-weight:800;fill:#1f6b23;}
+      .band{font-size:11px;font-weight:700;fill:#8a97a4;letter-spacing:1px;}
+    </style>
+  </defs>
+
+  <text x="530" y="38" text-anchor="middle" class="title">Bilingual Enterprise Agent &#8212; Architecture &amp; Round-Trip Flow</text>
+  <text x="530" y="61" text-anchor="middle" class="cap">Agents for Business &#183; ADK multi-agent &#183; MCP servers &#183; Security guardrail &#183; Compliance Skill</text>
+
+  <line x1="370" y1="80" x2="402" y2="80" class="down" marker-end="url(#down)"/>
+  <text x="408" y="84" class="flowd">request flows down</text>
+  <line x1="550" y1="80" x2="582" y2="80" class="up" marker-end="url(#up)"/>
+  <text x="588" y="84" class="flowu">result flows back up</text>
+
+  <!-- LAYER BANDS -->
+  <rect x="30" y="100" width="1000" height="76" rx="12" fill="#f4f7fb"/>
+  <text x="46" y="118" class="band">INTERACTION</text>
+  <rect x="30" y="196" width="1000" height="290" rx="12" fill="#eef6ef"/>
+  <text x="46" y="214" class="band">ORCHESTRATION</text>
+  <rect x="30" y="506" width="1000" height="120" rx="12" fill="#f5f3ef"/>
+  <text x="46" y="524" class="band">DATA &amp; RULES</text>
+
+  <!-- User -->
+  <rect x="430" y="110" width="200" height="56" rx="10" fill="#eef3f8" stroke="#3d5a73" stroke-width="2" filter="url(#shadow)"/>
+  <text x="530" y="134" text-anchor="middle" class="lbl">User (AR / EN)</text>
+  <text x="530" y="153" text-anchor="middle" class="sub">one UI &#183; free-format language</text>
+
+  <!-- Coordinator -->
+  <rect x="380" y="224" width="300" height="76" rx="10" fill="#d8ead8" stroke="#2e7d32" stroke-width="2" filter="url(#shadow)"/>
+  <text x="530" y="252" text-anchor="middle" class="lbl">Coordinator (root_agent)</text>
+  <text x="530" y="272" text-anchor="middle" class="sub">routes by tool name + description</text>
+  <text x="530" y="288" text-anchor="middle" class="sub">GUARDRAIL: read-only &#183; injection-resistant &#183; cites sources</text>
+
+  <line x1="505" y1="166" x2="505" y2="224" class="down" marker-end="url(#down)"/>
+  <text x="498" y="198" text-anchor="end" class="flowd">question</text>
+  <line x1="555" y1="224" x2="555" y2="166" class="up" marker-end="url(#up)"/>
+  <text x="562" y="198" text-anchor="start" class="flowu">grounded answer</text>
+
+  <!-- tools -->
+  <rect x="70" y="404" width="250" height="78" rx="10" fill="#e3ecf7" stroke="#3d5a73" stroke-width="2" filter="url(#shadow)"/>
+  <text x="195" y="430" text-anchor="middle" class="lbl">docs_agent</text>
+  <text x="195" y="450" text-anchor="middle" class="sub">policy / FAQ questions</text>
+  <text x="195" y="466" text-anchor="middle" class="sub">(AgentTool)</text>
+
+  <rect x="405" y="404" width="250" height="78" rx="10" fill="#e3ecf7" stroke="#3d5a73" stroke-width="2" filter="url(#shadow)"/>
+  <text x="530" y="430" text-anchor="middle" class="lbl">erp_agent</text>
+  <text x="530" y="450" text-anchor="middle" class="sub">vendor / invoice / PO data</text>
+  <text x="530" y="466" text-anchor="middle" class="sub">(AgentTool)</text>
+
+  <rect x="740" y="404" width="250" height="78" rx="10" fill="#f7ecd8" stroke="#b8860b" stroke-width="2" filter="url(#shadow)"/>
+  <text x="865" y="428" text-anchor="middle" class="lbl">check_invoice_compliance</text>
+  <text x="865" y="448" text-anchor="middle" class="sub">deterministic policy verdict</text>
+  <text x="865" y="464" text-anchor="middle" class="sub">(Agent Skill &#183; POL-PROC-002)</text>
+
+  <!-- coord <-> docs : elbow -->
+  <polyline points="450,300 450,348 195,348 195,404" class="down" marker-end="url(#down)"/>
+  <text x="310" y="341" text-anchor="middle" class="flowd">routes call</text>
+  <polyline points="240,404 240,364 480,364 480,300" class="up" marker-end="url(#up)"/>
+  <text x="370" y="380" text-anchor="middle" class="flowu">answer + citation</text>
+
+  <!-- coord <-> erp : straight -->
+  <line x1="515" y1="300" x2="515" y2="404" class="down" marker-end="url(#down)"/>
+  <line x1="555" y1="404" x2="555" y2="300" class="up" marker-end="url(#up)"/>
+
+  <!-- coord <-> skill : elbow -->
+  <polyline points="610,300 610,348 865,348 865,404" class="down" marker-end="url(#down)"/>
+  <text x="758" y="341" text-anchor="middle" class="flowd">invoice args</text>
+  <polyline points="820,404 820,364 580,364 580,300" class="up" marker-end="url(#up)"/>
+  <text x="682" y="380" text-anchor="middle" class="flowu">verdict</text>
+
+  <!-- data layer -->
+  <rect x="70" y="536" width="250" height="70" rx="10" fill="#f0f0f0" stroke="#5b6b7a" stroke-width="2" filter="url(#shadow)"/>
+  <text x="195" y="564" text-anchor="middle" class="lbl">SharePoint MCP server</text>
+  <text x="195" y="584" text-anchor="middle" class="sub">read-only &#183; policy + FAQ docs</text>
+
+  <rect x="405" y="536" width="250" height="70" rx="10" fill="#f0f0f0" stroke="#5b6b7a" stroke-width="2" filter="url(#shadow)"/>
+  <text x="530" y="564" text-anchor="middle" class="lbl">ERP MCP server</text>
+  <text x="530" y="584" text-anchor="middle" class="sub">read-only &#183; D365 F&amp;O-shaped data</text>
+
+  <rect x="740" y="536" width="250" height="70" rx="10" fill="#faf4e6" stroke="#b8860b" stroke-width="2" filter="url(#shadow)"/>
+  <text x="865" y="564" text-anchor="middle" class="lbl">check_invoice.py</text>
+  <text x="865" y="584" text-anchor="middle" class="sub">unit-tested rule logic</text>
+
+  <line x1="175" y1="482" x2="175" y2="536" class="down" marker-end="url(#down)"/>
+  <text x="168" y="512" text-anchor="end" class="flowd">query</text>
+  <line x1="215" y1="536" x2="215" y2="482" class="up" marker-end="url(#up)"/>
+  <text x="222" y="512" text-anchor="start" class="flowu">records</text>
+
+  <line x1="510" y1="482" x2="510" y2="536" class="down" marker-end="url(#down)"/>
+  <text x="503" y="512" text-anchor="end" class="flowd">query</text>
+  <line x1="550" y1="536" x2="550" y2="482" class="up" marker-end="url(#up)"/>
+  <text x="557" y="512" text-anchor="start" class="flowu">records</text>
+
+  <line x1="845" y1="482" x2="845" y2="536" class="down" marker-end="url(#down)"/>
+  <text x="838" y="512" text-anchor="end" class="flowd">call</text>
+  <line x1="885" y1="536" x2="885" y2="482" class="up" marker-end="url(#up)"/>
+  <text x="892" y="512" text-anchor="start" class="flowu">verdict</text>
+
+  <!-- concepts key -->
+  <text x="84" y="662" class="cap" font-weight="700">Course concepts demonstrated:</text>
+  <rect x="290" y="648" width="122" height="20" rx="10" fill="#2e7d32"/><text x="351" y="662" text-anchor="middle" class="tag">Multi-agent (ADK)</text>
+  <rect x="420" y="648" width="92" height="20" rx="10" fill="#3d5a73"/><text x="466" y="662" text-anchor="middle" class="tag">MCP servers</text>
+  <rect x="520" y="648" width="78" height="20" rx="10" fill="#8a2f2f"/><text x="559" y="662" text-anchor="middle" class="tag">Security</text>
+  <rect x="606" y="648" width="92" height="20" rx="10" fill="#b8860b"/><text x="652" y="662" text-anchor="middle" class="tag">Agent Skill</text>
+
+  <!-- scenario strip -->
+  <rect x="70" y="686" width="920" height="76" rx="10" fill="#ffffff" stroke="#cdd6df" filter="url(#shadow)"/>
+  <text x="84" y="708" class="cap" font-weight="700">Demonstrated scenarios:</text>
+  <text x="84" y="730" class="cap">1&#183; ERP total (25,450)   2&#183; return window (POL-RET-004)   3&#183; combined compliance (flags INV-1003)   4&#183; Skill verdict (VIOLATION)</text>
+  <text x="84" y="748" class="cap">5&#183; injection resistance   6&#183; human-in-the-loop triage   7&#183; bilingual (Arabic query &#8594; Arabic answer)</text>
+</svg>

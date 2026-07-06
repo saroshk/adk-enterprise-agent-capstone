@@ -1,0 +1,95 @@
+{
+  "value": [
+    {
+      "dataAreaId": "usmf",
+      "InvoiceNumber": "INV-1000",
+      "InvoiceAccount": "US-001",
+      "VendorName": "سابك (SABIC)",
+      "InvoiceAmount": 3100.00,
+      "CurrencyCode": "SAR",
+      "InvoiceDate": "2026-04-15",
+      "DueDate": "2026-05-30",
+      "PaymentTerms": "Net30",
+      "PurchaseOrderNumber": "PO-5000",
+      "InvoiceStatus": "Paid"
+    },
+    {
+      "dataAreaId": "usmf",
+      "InvoiceNumber": "INV-1001",
+      "InvoiceAccount": "US-001",
+      "VendorName": "سابك (SABIC)",
+      "InvoiceAmount": 4200.00,
+      "CurrencyCode": "SAR",
+      "InvoiceDate": "2026-05-10",
+      "DueDate": "2026-06-24",
+      "PaymentTerms": "Net45",
+      "PurchaseOrderNumber": "PO-5001",
+      "InvoiceStatus": "Open"
+    },
+    {
+      "dataAreaId": "usmf",
+      "InvoiceNumber": "INV-1002",
+      "InvoiceAccount": "US-001",
+      "VendorName": "سابك (SABIC)",
+      "InvoiceAmount": 8750.00,
+      "CurrencyCode": "SAR",
+      "InvoiceDate": "2026-05-22",
+      "DueDate": "2026-07-06",
+      "PaymentTerms": "Net45",
+      "PurchaseOrderNumber": "PO-5002",
+      "InvoiceStatus": "Open"
+    },
+    {
+      "dataAreaId": "usmf",
+      "InvoiceNumber": "INV-1003",
+      "InvoiceAccount": "US-001",
+      "VendorName": "سابك (SABIC)",
+      "InvoiceAmount": 12500.00,
+      "CurrencyCode": "SAR",
+      "InvoiceDate": "2026-06-02",
+      "DueDate": "2026-07-17",
+      "PaymentTerms": "Net45",
+      "PurchaseOrderNumber": null,
+      "InvoiceStatus": "Open"
+    },
+    {
+      "dataAreaId": "usmf",
+      "InvoiceNumber": "INV-2001",
+      "InvoiceAccount": "US-002",
+      "VendorName": "أرامكو السعودية (Saudi Aramco)",
+      "InvoiceAmount": 6000.00,
+      "CurrencyCode": "SAR",
+      "InvoiceDate": "2026-05-18",
+      "DueDate": "2026-06-17",
+      "PaymentTerms": "Net30",
+      "PurchaseOrderNumber": "PO-6001",
+      "InvoiceStatus": "Open"
+    },
+    {
+      "dataAreaId": "usmf",
+      "InvoiceNumber": "INV-2002",
+      "InvoiceAccount": "US-002",
+      "VendorName": "أرامكو السعودية (Saudi Aramco)",
+      "InvoiceAmount": 15000.00,
+      "CurrencyCode": "SAR",
+      "InvoiceDate": "2026-06-05",
+      "DueDate": "2026-07-05",
+      "PaymentTerms": "Net30",
+      "PurchaseOrderNumber": "PO-6002",
+      "InvoiceStatus": "Open"
+    },
+    {
+      "dataAreaId": "usmf",
+      "InvoiceNumber": "INV-3001",
+      "InvoiceAccount": "US-003",
+      "VendorName": "معادن (Ma'aden)",
+      "InvoiceAmount": 2300.00,
+      "CurrencyCode": "SAR",
+      "InvoiceDate": "2026-04-28",
+      "DueDate": "2026-05-13",
+      "PaymentTerms": "Net15",
+      "PurchaseOrderNumber": "PO-7001",
+      "InvoiceStatus": "Paid"
+    }
+  ]
+}

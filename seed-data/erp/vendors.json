@@ -1,0 +1,31 @@
+{
+  "value": [
+    {
+      "dataAreaId": "usmf",
+      "VendorAccountNumber": "US-001",
+      "VendorName": "Contoso Supplies",
+      "VendorGroupId": "10",
+      "PaymentTerms": "Net45",
+      "CurrencyCode": "USD",
+      "VendorHoldStatus": "No"
+    },
+    {
+      "dataAreaId": "usmf",
+      "VendorAccountNumber": "US-002",
+      "VendorName": "Fabrikam Logistics",
+      "VendorGroupId": "10",
+      "PaymentTerms": "Net30",
+      "CurrencyCode": "USD",
+      "VendorHoldStatus": "No"
+    },
+    {
+      "dataAreaId": "usmf",
+      "VendorAccountNumber": "US-003",
+      "VendorName": "Northwind Traders",
+      "VendorGroupId": "20",
+      "PaymentTerms": "Net15",
+      "CurrencyCode": "USD",
+      "VendorHoldStatus": "No"
+    }
+  ]
+}
