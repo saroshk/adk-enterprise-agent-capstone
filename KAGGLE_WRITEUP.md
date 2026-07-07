@@ -1,4 +1,4 @@
-# Bilingual Enterprise Agent for ERP & Policy Compliance
+# FinDocCompliance: A Bilingual Multi-Agent Enterprise Assistant
 
 ### An ADK multi-agent assistant over Dynamics 365 F&O and SharePoint — answering finance and policy questions, checking invoices against procurement policy, and keeping a human in the loop.
 
